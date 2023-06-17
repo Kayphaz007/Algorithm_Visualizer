@@ -1,14 +1,24 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./HomeComponents/home";
-import Sort from "./SortComponents/sort";
+import React from "react";
+import styled from "styled-components";
+import { NavBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
+import { Controller } from "./components/Controller";
+import { AlgoDisplay } from "./components/AlgoDisplay";
 
-function App() {
+const Container = styled.div`
+  margin: 0 10px;
+  min-height: calc(100vh - 50px);
+  position: relative;
+  margin-bottom: 50px;
+`;
+
+export default function App() {
   return (
-      <Routes>
-        <Route path="/sort" element={<Sort />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
+    <Container>
+      <NavBar />
+      <Controller />
+      <AlgoDisplay />
+      <Footer />
+    </Container>
   );
 }
-
-export default App;

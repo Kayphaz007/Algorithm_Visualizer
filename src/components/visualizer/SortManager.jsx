@@ -81,7 +81,7 @@ export const SortManager = React.memo(function ({
     useControls.subscribe(
       (value) => {
         progress.current = value;
-
+        
         if (progress.current === "start") runAlgo();
         if (progress.current === "reset") reset();
       },
@@ -125,7 +125,7 @@ export const SortManager = React.memo(function ({
     algoArray.current[i] = algoArray.current[j];
     algoArray.current[j] = tmp;
     setSwapIndices([i, j]);
-
+    
     pivot.current = -1;
     swapCount.current += 1;
     await delay(swapTime);
